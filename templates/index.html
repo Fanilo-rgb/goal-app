@@ -1,1 +1,14 @@
 <h1>Home page</h1>
+
+<ol>
+  {% for goal in goals %}
+  <li>
+    <strong>Description:</strong> {{ goal.description }}<br />
+    <strong>Priority:</strong> {{ goal.priority }}<br />
+    <strong>Status:</strong> {{ goal.status }}<br />
+    <strong>Created Date:</strong> {{ goal.created_date|date:"d-m-Y H:i" }}
+  </li>
+  {% empty %}
+  <p>No goals found.</p>
+  {% endfor %}
+</ol>

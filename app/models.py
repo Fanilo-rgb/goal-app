@@ -33,6 +33,7 @@ class Goal(models.Model):
     priority = models.CharField(max_length=50, choices=CHOICE)
     subcategory = models.ForeignKey(Subcategory, on_delete=models.PROTECT, related_name="goals")
     status = models.CharField(max_length=50, choices=STATUS)
+    created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.description
